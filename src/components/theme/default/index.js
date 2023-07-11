@@ -1,4 +1,4 @@
-import { getMuiTheme } from "./CyVerseTheme";
+import { getMuiTheme } from "./SoteriaTheme";
 
 const theme = getMuiTheme();
 
