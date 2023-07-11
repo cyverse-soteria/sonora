@@ -34,12 +34,15 @@ function UserSurvey(props) {
                 style={{ backgroundColor: theme.palette.secondary.main }}
                 avatar={
                     <NewReleases
-                        style={{ color: theme.palette.gold }}
+                        style={{ color: theme.palette.white }}
                         fontSize="large"
                     />
                 }
                 title={
-                    <Typography variant="subtitle2">
+                    <Typography
+                        variant="h6"
+                        style={{ color: theme.palette.white }}
+                    >
                         {t("cyverseTransition")}
                     </Typography>
                 }
