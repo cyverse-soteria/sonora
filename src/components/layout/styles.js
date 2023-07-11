@@ -2,7 +2,7 @@ const drawerWidth = 250;
 const miniDrawerWidth = 70;
 const LayoutStyles = (theme) => ({
     appBar: {
-        backgroundColor: theme.palette.main_appbar,
+        backgroundColor: theme.palette.uaAzurite,
         zIndex: theme.zIndex.drawer + 1,
         width: "100%",
         [theme.breakpoints.up("sm")]: {
@@ -65,7 +65,7 @@ const LayoutStyles = (theme) => ({
         whiteSpace: "nowrap",
     },
     drawerOpen: {
-        backgroundColor: theme.palette.main_sidebar,
+        backgroundColor: theme.palette.uaBlue,
         color: theme.palette.info.contrastText,
         width: drawerWidth,
         [theme.breakpoints.up("sm")]: {
@@ -77,7 +77,7 @@ const LayoutStyles = (theme) => ({
     },
     drawerClose: {
         [theme.breakpoints.up("sm")]: {
-            backgroundColor: theme.palette.main_sidebar,
+            backgroundColor: theme.palette.uaBlue,
             color: theme.palette.info.contrastText,
             transition: theme.transitions.create("width", {
                 easing: theme.transitions.easing.sharp,
@@ -124,7 +124,7 @@ const LayoutStyles = (theme) => ({
         cursor: "pointer",
         textDecoration: "underline",
         color: theme.palette.primary.contrastText,
-        backgroundColor: theme.palette.primary.main,
+        backgroundColor: theme.palette.uaAzurite,
     },
     menuIcon: {
         color: theme.palette.primary.contrastText,
