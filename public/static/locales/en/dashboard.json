@@ -78,6 +78,9 @@
     "terminateAria": "terminate this analysis",
     "totalJobs": "Total: {{jobTotal}}",
     "tweetAria": "tweet",
-    "videosFeed": "Videos",
-    "welcome": "Welcome to Discovery Environment"
+    "videosFeed": "Training Videos",
+    "welcome": "Welcome to Discovery Environment",
+    "welcomeCyverseHealth": "Welcome to CyVerse Health",
+    "compliantMessage": "A HIPAA compliant platform to securely process, share and analyze data sets with PHI/PII",
+    "learnMessage": "Learn how to use CyVerse Health with our quick start guide and tutorials"
 }
