@@ -18,10 +18,11 @@ import {
     Typography,
     useTheme,
     useMediaQuery,
-    Link,
-} from "@mui/material";
+    Button,
+    Box,
+} from "@material-ui/core";
 import constants from "../../../constants";
-import ExternalLink from "components/utils/ExternalLink";
+import ExternalLinkButton from "components/utils/ExternalLinkButton";
 
 export default function Banner(props) {
     const theme = useTheme();
@@ -30,7 +31,7 @@ export default function Banner(props) {
     const router = useRouter();
     const [config] = useConfig();
 
-    const cyverse_url = config?.cyverseURL;
+    //const cyverse_url = config?.cyverseURL;
 
     const onLoginClick = (event) => {
         router.push(`/${NavigationConstants.LOGIN}${router.asPath}`);
@@ -44,13 +45,14 @@ export default function Banner(props) {
     }, [config]);
 
     return (
-        <Paper>
+        <Paper elevation={0}>
             <Grid
                 container
                 direction={isMobile ? "column" : "row"}
                 justifyContent="space-between"
                 alignItems="center"
                 spacing={isMobile ? 1 : 3}
+                style={{ marginTop: "2rem", margin: "0 auto" }}
             >
                 <Grid item xs={isMobile ? 12 : 6}>
                     <Image
@@ -73,63 +75,68 @@ export default function Banner(props) {
                         direction="column"
                         justifyContent="space-between"
                         alignItems="center"
+                        alignContent="center"
                         spacing={isMobile ? 1 : 3}
+                        style={{ textAlign: "center" }}
                     >
                         <Grid item xs={12}>
                             <Typography
-                                variant={isMobile ? "subtitle2" : "h6"}
+                                variant={isMobile ? "subtitle2" : "h4"}
                                 color="primary"
                             >
-                                {t("welcome")}
+                                {t("welcomeCyverseHealth")}
                             </Typography>
                         </Grid>
                         <Grid item xs={12}>
                             <Typography
-                                variant={isMobile ? "caption" : "subtitle2"}
+                                variant={isMobile ? "caption" : "body1"}
                             >
-                                {t("loginSignUp")}
+                                {t("compliantMessage")}
                             </Typography>
                         </Grid>
                         <Grid item xs={12}>
-                            <ExternalLink
-                                color="primary"
-                                style={{
-                                    margin: theme.spacing(0.4),
-                                }}
-                                href={cyverse_url}
+                            <Typography
+                                variant={isMobile ? "caption" : "body1"}
                             >
-                                {t("learnMore")} |
-                            </ExternalLink>
-                            <ExternalLink
-                                color="primary"
-                                style={{
-                                    margin: theme.spacing(0.4),
-                                }}
-                                href={constants.GETTING_STARTED}
-                            >
-                                {t("gettingStarted")} |
-                            </ExternalLink>
-
-                            <ExternalLink
-                                color="primary"
-                                style={{
-                                    margin: theme.spacing(0.4),
-                                }}
-                                href={userPortalURLRef.current}
-                            >
-                                {t("signUp")} |
-                            </ExternalLink>
-                            <Link
+                                {t("learnMessage")}
+                            </Typography>
+                        </Grid>
+                        <Grid item xs={12}>
+                            <Button
+                                size="large"
+                                fullWidth
+                                variant="contained"
                                 href="#"
-                                color="primary"
                                 onClick={onLoginClick}
                                 style={{
                                     margin: theme.spacing(0.4),
+                                    backgroundColor: theme.palette.uaRiver,
+                                    color: theme.palette.white,
                                 }}
                                 underline="hover"
                             >
                                 {t("login")}
-                            </Link>
+                            </Button>
+                            <Box
+                                display="flex"
+                                justifyContent="center"
+                                alignItems="center"
+                            >
+                                <Box>
+                                    <ExternalLinkButton
+                                        href={constants.GETTING_STARTED}
+                                    >
+                                        {t("gettingStarted")}
+                                    </ExternalLinkButton>
+                                </Box>
+                                <Box>
+                                    <ExternalLinkButton
+                                        href={userPortalURLRef.current}
+                                    >
+                                        {t("signUp")}
+                                    </ExternalLinkButton>
+                                </Box>
+                            </Box>
                         </Grid>
                     </Grid>
                 </Grid>
