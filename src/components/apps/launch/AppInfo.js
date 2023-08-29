@@ -41,9 +41,6 @@ import { Skeleton } from "@material-ui/lab";
 
 import { appUnavailable } from "../utils";
 
-import { useConfig } from "contexts/config";
-import ExternalLink from "components/utils/ExternalLink";
-
 const useStyles = makeStyles(styles);
 
 const LoadingErrorDisplay = ({ baseId, loadingError }) => {
@@ -75,7 +72,6 @@ const UnavailableMsg = ({
 }) => {
     let message = "";
     const { t } = useTranslation("launch");
-    const [config] = useConfig();
 
     if (app?.deleted) {
         message = (
@@ -112,19 +108,7 @@ const UnavailableMsg = ({
             />
         );
     } else if (computeLimitExceeded) {
-        message = (
-            <Trans
-                t={t}
-                i18nKey="computeLimitExceeded"
-                components={{
-                    buy: (
-                        <ExternalLink
-                            href={config?.subscriptions?.checkout_url}
-                        />
-                    ),
-                }}
-            />
-        );
+        message = <Trans t={t} i18nKey="computeLimitExceeded" />;
     }
 
     return (
