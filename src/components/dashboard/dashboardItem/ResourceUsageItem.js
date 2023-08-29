@@ -8,14 +8,7 @@
 
 import React from "react";
 import { Trans, useTranslation } from "i18n";
-import {
-    Button,
-    Grid,
-    Typography,
-    Divider,
-    useTheme,
-    Card,
-} from "@mui/material";
+import { Grid, Typography, Divider, useTheme, Card } from "@material-ui/core";
 
 import DataConsumption from "./DataConsumption";
 import AnalysesStats from "./AnalysesStats";
@@ -26,7 +19,6 @@ import ErrorTypographyWithDialog from "components/error/ErrorTypographyWithDialo
 import { formatDateObject } from "components/utils/DateFormatter";
 
 import constants from "../../../constants";
-import { useConfig } from "contexts/config";
 
 import { Skeleton } from "@mui/material";
 
@@ -34,7 +26,6 @@ export default function ResourceUsageItem(props) {
     const { resourceUsageSummary, resourceUsageError, isLoading } = props;
     const { t } = useTranslation(["dashboard", "common"]);
 
-    const [config] = useConfig();
     const theme = useTheme();
     if (isLoading) {
         return <Skeleton variant="rectangular" width={800} height={200} />;
@@ -96,21 +87,6 @@ export default function ResourceUsageItem(props) {
                                         }}
                                     />
                                 </Typography>
-                            </Grid>
-                            <Grid item xs={6}>
-                                <Button
-                                    color="primary"
-                                    size="small"
-                                    variant="contained"
-                                    onClick={() =>
-                                        window.open(
-                                            config?.subscriptions?.checkout_url,
-                                            "_blank"
-                                        )
-                                    }
-                                >
-                                    {t("buy")}
-                                </Button>
                             </Grid>
                             <Grid item xs={12}>
                                 <Typography>

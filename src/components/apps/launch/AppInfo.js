@@ -34,11 +34,8 @@ import { Skeleton } from "@mui/material";
 
 import { appUnavailable } from "../utils";
 
-import { useConfig } from "contexts/config";
-import ExternalLink from "components/utils/ExternalLink";
 import useBreakpoints from "components/layout/useBreakpoints";
-
-const useStyles = makeStyles()(styles);
+const useStyles = makeStyles(styles);
 
 const LoadingErrorDisplay = ({ baseId, loadingError }) => {
     const [errorDialogOpen, setErrorDialogOpen] = React.useState(false);
@@ -69,7 +66,6 @@ const UnavailableMsg = ({
 }) => {
     let message = "";
     const { t } = useTranslation("launch");
-    const [config] = useConfig();
 
     if (app?.deleted) {
         message = (
@@ -108,19 +104,7 @@ const UnavailableMsg = ({
             />
         );
     } else if (computeLimitExceeded) {
-        message = (
-            <Trans
-                t={t}
-                i18nKey="computeLimitExceeded"
-                components={{
-                    buy: (
-                        <ExternalLink
-                            href={config?.subscriptions?.checkout_url}
-                        />
-                    ),
-                }}
-            />
-        );
+        message = <Trans t={t} i18nKey="computeLimitExceeded" />;
     }
 
     return (
