@@ -6,7 +6,7 @@
 import React from "react";
 import theme from "components/theme/default";
 
-import { Link, Button } from "@material-ui/core";
+import { Link, Button } from "@mui/material";
 
 const ExternalLinkButton = (props) => {
     return (

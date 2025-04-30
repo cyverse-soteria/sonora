@@ -20,7 +20,7 @@ import {
     useMediaQuery,
     Button,
     Box,
-} from "@material-ui/core";
+} from "@mui/material";
 import constants from "../../../constants";
 import ExternalLinkButton from "components/utils/ExternalLinkButton";
 

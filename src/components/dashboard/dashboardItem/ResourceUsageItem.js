@@ -8,7 +8,7 @@
 
 import React from "react";
 import { Trans, useTranslation } from "i18n";
-import { Grid, Typography, Divider, useTheme, Card } from "@material-ui/core";
+import { Grid, Typography, Divider, useTheme, Card } from "@mui/material";
 
 import DataConsumption from "./DataConsumption";
 import AnalysesStats from "./AnalysesStats";

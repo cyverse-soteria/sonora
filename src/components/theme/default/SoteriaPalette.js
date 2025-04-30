@@ -33,7 +33,9 @@ const newPalette = {
 };
 
 // Merge the two palettes for now. We'll eventually remove the old palette.
-export default {
+const palette = {
     ...newPalette,
     ...uaPalette,
 };
+
+export default palette;
