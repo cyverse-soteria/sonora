@@ -6,7 +6,7 @@ build:
   artifacts:
     - image: harbor.cyverse.org/de/sonora
   platforms:
-    - linux/amd64
+    - "linux/amd64"
   tagPolicy:
     gitCommit: {}
   local: {}
