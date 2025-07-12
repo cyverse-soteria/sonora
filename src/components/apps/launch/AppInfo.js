@@ -35,7 +35,7 @@ import { Skeleton } from "@mui/material";
 import { appUnavailable } from "../utils";
 
 import useBreakpoints from "components/layout/useBreakpoints";
-const useStyles = makeStyles(styles);
+const useStyles = makeStyles()(styles);
 
 const LoadingErrorDisplay = ({ baseId, loadingError }) => {
     const [errorDialogOpen, setErrorDialogOpen] = React.useState(false);
